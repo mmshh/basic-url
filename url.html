@@ -1,0 +1,38 @@
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Shorten/Expand URL</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <script src="url.js"></script>
+  </head>
+  <body>
+
+  <div class="container">
+  <div class="page-header">
+    <h1>Shorten/Expand URL</h1>
+  </div>
+    <p>Required format is http://www.website.domain/(example)</p>
+    <form role="form" onsubmit="shortenURL(); return false;">
+      <div class="form-group" id="shortenerContainer">
+        <label for="longURL">Please enter the long URL you intend to shorten:</label>
+        <input type="text" class="form-control" id="longURL" pattern="http:\/\/www\.[\da-z-]+\.[a-z]{2,6}[\/\w _ \( \) \& \% \$ ! \+ ~ = \?\.-]*">
+        <button class="btn" type="submit" value="Go">Go</button>
+        <p id="shortenedUrl"></p>
+      </div>
+    </form>
+    <form role="form" onsubmit="expandURL(); return false;">
+      <div class="form-group" id="expandContainer">
+        <label for="shortURL">Please enter the short URL you intend to expand:</label>
+        <input type="text" class="form-control" id="shortURL" pattern="http:\/\/cl\.ip\/[\w \.-]*">
+        <button class="btn" type="submit" value="Go">Go</button>
+        <p id="expandedUrl"></p>
+      </div>
+    </form>
+  </div>
+
+  </body>
+  <script src="http://crypto-js.googlecode.com/svn/tags/3.1.2/build/rollups/md5.js"></script>
+  </html>
